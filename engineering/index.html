@@ -1,0 +1,211 @@
+<html>
+<head>
+<meta http-equiv="Pragma" content="no-cache">
+<style type="text/css">
+@font-face {
+	src: url("Roboto/Roboto-Light.ttf");
+	font-family: "roboto";
+	font-style: normal;
+	font-weight:300;
+}
+@font-face {
+	src: url("Roboto/Roboto-Regular.ttf");
+	font-family: "roboto";
+	font-style: normal;
+	font-weight:400;
+}
+
+	body {
+	  background-color: black;
+	  margin:0;
+	  padding:100px;
+	  color:#ffffff;
+	  font-family:roboto,sans-serif;
+	  font-size:1.4em;
+	}
+
+*:focus {
+	background: rgba(0,0,0,0);
+	outline: rgba(0,0,0,0) thin solid;
+}
+
+
+	a {
+		color: white;
+		padding:10px 20px;
+		margin:2px;
+		background-color:#333;
+		display:inline-block;
+		text-decoration: none;
+		background:rgb(128,128,128);
+		background:linear-gradient(to bottom, rgb(60,60,60), rgb(80,80,80));
+		box-sizing:border-box;
+		border-radius:1px;
+		border:1px solid rgba(255,255,255,0.1);
+	}
+
+	h1 {
+		margin:0;
+		margin-bottom:5px;
+		font-size:2.2em;
+	}
+
+	a:focus {
+		color: #fff;
+		background-color:#00aef3;
+
+		transform-origin:center center;
+		transform:perspective(1000px) scaleZ(1) translateZ(120px);
+		transition:transform 0.25s;
+		transition-timing-function:cubic-bezier(0.23, 1, 0.32, 1);
+	}
+	a:active {
+		background:linear-gradient(to top, rgb(0,150,209), rgb(0,97,136)) !important;
+	}
+
+::-webkit-scrollbar {
+    height: 12px;
+    width: 24px;
+    background: #383838;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #999;
+    border:3px solid #383838;
+    -webkit-border-radius: 0px;
+    -webkit-box-shadow: none;
+}
+
+::-webkit-scrollbar-corner {
+    background: #383838;
+}
+
+</style>
+
+<script>
+if(typeof AirTiesVP != 'undefined') {
+	AirJS = new AirTiesVP();
+	AirJS.setVideoSize(true);
+	//AirJS.disableMacrovision()
+}
+
+var callPing = function() {
+	var pingRes = sagem.Set('NETWORK','PING','mbl.is');
+	var pingEl = document.getElementById("pingResults");
+	pingEl.innerHTML = pingRes;
+}
+
+var setdns2todns1 = function() {
+	var dns1 = sagem.Get("NETWORK","DNS1");
+	sagem.Set("NETWORK","DNS2",dns1);
+}
+
+</script>
+
+</head>
+
+<body>
+
+
+<h1>Engineering menu</h1>
+<script> if(typeof sagem != 'undefined') { document.write("GATEWAY: " + sagem.Get("NETWORK","GATEWAY")); } </script>
+<br>
+<a href="http://157.157.4.37">http://157.157.4.37 (Production)</a><br>
+<a href="http://157.157.4.37/snickers/?skip_ott=1">http://157.157.4.37/snickers/?skip_ott=1</a><br>
+<a href="http://157.157.4.37/snickers/?test=1">http://157.157.4.37/snickers/?test=1</a><br>
+<a href="http://157.157.4.37/snickers/?service_provider=tal">http://157.157.4.37/snickers/?service_provider=tal (Production 365)</a><br>
+<a href="http://157.157.4.37/processed/espresso-gui/build5/">Espresso-GUI 5</a><br>
+<a href="http://10.80.2.250:5545/snickers/">http://10.80.2.250:5545/snickers/</a><br>
+<a href="http://api.tv.siminn.is/">http://api.tv.siminn.is/</a><br>
+<a href="http://api.tv.siminn.is/snickers/">http://api.tv.siminn.is/snickers/</a><br>
+<a href="http://157.157.2.130/">http://157.157.2.130/</a><br>
+<a href="http://www.mbl.is/">http://www.mbl.is/</a><br>
+<a href="http://www.w3.org/">http://www.w3.org/</a><br>
+<a href="http://10.80.2.250:8080/snickers/v153/index.dev.html?test=1">http://10.80.2.250:8080/snickers/v153/index.dev.html?test=1</a><br>
+<a href="http://157.157.4.37/snickers/v153/index.dev.html?test=1">http://157.157.4.37/snickers/v153/index.dev.html?test=1</a><br>
+<a href="http://157.157.4.37/snickers/v153/index.html">http://157.157.4.37/snickers/v153/index.html</a><br>
+<a href="http://157.157.4.37/snickers/v154/index.html">http://157.157.4.37/snickers/v154/index.html</a><br>
+<a href="http://157.157.4.37/snickers/v153/index.dev.html">http://157.157.4.37/snickers/v153/index.dev.html</a><br>
+<a href="http://157.157.2.126/snickers/?test=1&skip_ott=1">http://157.157.2.126/snickers/?test=1&skip_ott=1</a><br>
+<br>
+<br>
+<a href="http://10.80.2.241">Arni (10.80.2.241)</a><br>
+<a href="http://10.80.2.241:8888/">Arni/Snickers</a><br>
+<a href="http://10.80.2.241:8888/index.dev.html">Arni/Snickers-DEV</a><br>
+<a href="http://10.80.2.241:8888/index.dev.html?nocache=1">Arni/Snickers-DEV NOCACHE</a><br>
+<br>
+<a href="http://10.80.2.241:8889/index.dev.html">Arni/Espresso-DEV</a><br>
+<a href="http://10.80.2.241:3000">http://10.80.2.241:3000</a><br>
+<br>
+<br>
+
+<br>
+<b>SagemCom EI90/DIW384 QOS settings:</b><br>
+<a href="#" onClick="sagem.Set('QOS','SYSTEM_STATE','ON'); sagem.Set('QOS','PERIODIC_TIMER','60000');">Enable QOS for SagemCom every 1 min.</a><br>
+<a href="#" onClick="sagem.Set('QOS','SYSTEM_STATE','ON'); sagem.Set('QOS','PERIODIC_TIMER','300000');">Enable QOS for SagemCom every 5 min.</a><br>
+<a href="#" onClick="sagem.Set('QOS','SYSTEM_STATE','OFF');">Disable QOS for SagemCom </a><br>
+<a href="#" onClick="sagem.Set('QOS','VOD_EVENT_STATE','ON');">Enable QOS VOD EVENT STATE </a><br>
+<a href="#" onClick="sagem.Set('QOS','VOD_EVENT_STATE','OFF');">Disable QOS VOD EVENT STATE </a><br>
+<a href="#" onClick="sagem.Set('NETWORK','DNS1','157.157.2.117','SAVE');">SET DNS1 TO 157.157.2.117</a><br>
+<a href="#" onClick="sagem.Set('NETWORK','DNS2','157.157.2.117','SAVE');">SET DNS2 TO 157.157.2.117</a><br>
+<a href="#" onClick="sagem.Set('NETWORK','DNS1','192.168.1.254','SAVE');">SET DNS1 TO 192.168.1.254</a><br>
+<a href="#" onClick="sagem.Set('NETWORK','DNS2','192.168.1.254','SAVE');">SET DNS2 TO 192.168.1.254</a><br>
+
+<a href="#" onClick="callPing()">Test ping</a><br>
+<a href="#" onClick="setdns2todns1()">setdns2todns1</a><br>
+
+<div id="pingResults"></div>
+
+
+<br>
+<br>
+<b>SagemCom DIW384 Upgrade links:</b><br>
+<a href="#" onClick="sagem.Set('STB', 'UPGRADE', 'URL', 'http://157.157.2.115/diw384uhd/rescue/prod/SAGEMCOM.0N.0.1.0_00_00901%03'); sagem.Set('POWER', 'STATE', 'REBOOT');">http://157.157.2.115/diw384uhd/rescue/prod/SAGEMCOM.0N.0.1.0_00_00901%03 <b>VERSION 0.9.1</b> (IPTV or Bridged-IPTV)</a><br>
+<a href="#" onClick="sagem.Set('STB', 'UPGRADE', 'URL', 'http://157.157.9.172/diw384uhd/rescue/prod/SAGEMCOM.0N.0.1.0_00_00901%03'); sagem.Set('POWER', 'STATE', 'REBOOT');">http://157.157.9.172/diw384uhd/rescue/prod/SAGEMCOM.0N.0.1.0_00_00901%03 <b>VERSION 0.9.1</b> (Routed-IPTV)</a><br>
+<a href="#" onClick="sagem.Set('STB', 'UPGRADE', 'URL', 'http://157.157.2.115/diw384uhd/rescue/prod/SAGEMCOM.0N.0.1.0_00_00000%03'); sagem.Set('POWER', 'STATE', 'REBOOT');">http://157.157.2.115/diw384uhd/rescue/prod/SAGEMCOM.0N.0.1.0_00_00000%03 (IPTV or Bridged-IPTV)</a><br>
+<a href="#" onClick="sagem.Set('STB', 'UPGRADE', 'URL', 'http://firmwares2.tv.siminn.is/diw384uhd/rescue/prod/SAGEMCOM.0N.0.1.0_00_00000%03'); sagem.Set('POWER', 'STATE', 'REBOOT');">http://firmwares2.tv.siminn.is/diw384uhd/rescue/prod/SAGEMCOM.0N.0.1.0_00_00000%03 (Internet or Routed-IPTV)</a><br>
+<a href="#" onClick="sagem.Set('STB', 'UPGRADE', 'URL', 'http://157.157.2.115/diw384uhd/rescue/prod/SAGEMCOM.0N.0.1.0_00_00804%03'); sagem.Set('POWER', 'STATE', 'REBOOT');">http://157.157.2.115/diw384uhd/rescue/prod/SAGEMCOM.0N.0.1.0_00_00804%03 <b>VERSION 0.8.4 (DOWNGRADE)</b> (IPTV or Bridged-IPTV)</a><br>
+
+<a href="#" onClick="sagem.Set('STB', 'UPGRADE', 'URL', 'http://firmwares1.tv.siminn.is/diw384uhd/rescue/prod/SAGEMCOM.0N.0.1.0_00_01004%03'); sagem.Set('POWER', 'STATE', 'REBOOT');">http://firmwares1.tv.siminn.is/diw384uhd/rescue/prod/SAGEMCOM.0N.0.1.0_00_01004%03 (IPTV or Routed-IPTV)</a><br>
+<a href="#" onClick="sagem.Set('STB', 'UPGRADE', 'URL', 'http://firmwares2.tv.siminn.is/diw384uhd/rescue/prod/SAGEMCOM.0N.0.1.0_00_01004%03'); sagem.Set('POWER', 'STATE', 'REBOOT');">http://firmwares2.tv.siminn.is/diw384uhd/rescue/prod/SAGEMCOM.0N.0.1.0_00_01004%03 (Internet or Routed-IPTV)</a><br>
+<a href="#" onClick="sagem.Set('STB', 'UPGRADE', 'URL', 'http://157.157.2.115/diw384uhd/rescue/prod/SAGEMCOM.0N.0.1.0_00_01004%03'); sagem.Set('POWER', 'STATE', 'REBOOT');">http://157.157.2.115/diw384uhd/rescue/prod/SAGEMCOM.0N.0.1.0_00_01004%03 (IPTV or Routed-IPTV)</a><br>
+
+<b>debug:</b><br>
+<a href="#" onClick="sagem.Set('STB', 'UPGRADE', 'URL', 'http://157.157.2.115/diw384uhd/rescue/test/SAGEMCOM.0N.0.0.0_00_00901%03'); sagem.Set('POWER', 'STATE', 'REBOOT');">http://157.157.2.115/diw384uhd/rescue/test/SAGEMCOM.0N.0.0.0_00_00901%03 <b>VERSION 0.9.1</b> (IPTV or Bridged-IPTV)</a><br>
+<a href="#" onClick="sagem.Set('STB', 'UPGRADE', 'URL', 'http://157.157.9.172/diw384uhd/rescue/test/SAGEMCOM.0N.0.0.0_00_00901%03'); sagem.Set('POWER', 'STATE', 'REBOOT');">http://firmwares2.tv.siminn.is/diw384uhd/rescue/test/SAGEMCOM.0N.0.0.0_00_00901%03 <b>VERSION 0.9.1</b> (Routed-IPTV)</a><br>
+<a href="#" onClick="sagem.Set('STB', 'UPGRADE', 'URL', 'http://157.157.2.115/diw384uhd/rescue/test/SAGEMCOM.0N.0.0.0_00_00000%03'); sagem.Set('POWER', 'STATE', 'REBOOT');">http://157.157.2.115/diw384uhd/rescue/test/SAGEMCOM.0N.0.0.0_00_00000%03 (IPTV or Bridged-IPTV)</a><br>
+<a href="#" onClick="sagem.Set('STB', 'UPGRADE', 'URL', 'http://firmwares2.tv.siminn.is/diw384uhd/rescue/test/SAGEMCOM.0N.0.0.0_00_00000%03'); sagem.Set('POWER', 'STATE', 'REBOOT');">http://firmwares2.tv.siminn.is/diw384uhd/rescue/test/SAGEMCOM.0N.0.0.0_00_00000%03 (Internet or Routed-IPTV)</a><br>
+<a href="#" onClick="sagem.Set('STB', 'UPGRADE', 'URL', 'http://firmwares1.tv.siminn.is/diw384uhd/rescue/test/validation%03'); sagem.Set('POWER', 'STATE', 'REBOOT');">http://firmwares1.tv.siminn.is/diw384uhd/rescue/test/validation%03 (Internet or Routed-IPTV)</a><br>
+<a href="#" onClick="sagem.Set('STB', 'UPGRADE', 'URL', 'http://firmwares2.tv.siminn.is/diw384uhd/rescue/test/validation%03'); sagem.Set('POWER', 'STATE', 'REBOOT');">http://firmwares2.tv.siminn.is/diw384uhd/rescue/test/validation%03 (Internet or Routed-IPTV)</a><br>
+<a href="#" onClick="sagem.Set('STB', 'UPGRADE', 'URL', 'http://157.157.2.115/diw384uhd/rescue/test/validation%03'); sagem.Set('POWER', 'STATE', 'REBOOT');">http://157.157.2.115/diw384uhd/rescue/test/validation%03 (Internet or Routed-IPTV)</a><br>
+<a href="#" onClick="sagem.Set('STB', 'UPGRADE', 'URL', 'http://157.157.9.172/diw384uhd/rescue/test/validation%03'); sagem.Set('POWER', 'STATE', 'REBOOT');">http://157.157.9.172/diw384uhd/rescue/test/validation%03 (Internet or Routed-IPTV)</a><br>
+<br>
+<br>
+<a href="http://10.80.2.250:8553">Johann (http://10.80.2.250:8553)</a><br>
+<br><br>
+
+<a href="http://d8677153.ngrok.io/index.dev.html">http://d8677153.ngrok.io/index.dev.html</a><br>
+
+<b>AirTies 7410X UHD upgrade links:</b><br>
+<a href="firmwares/airties-uhd-upgrade.html">AirTies UHD 7410X Upgrade Page</a><br>
+<br>
+<br>
+
+<b>SagemCom EI90 upgrade links:</b><br>
+<a href="#" onClick="sagem.Set('STB', 'UPGRADE', '157.157.4.37', '69', 'sagem.52.0.0.4_0_26'); sagem.Set('STB','REBOOT');">&lt;&lt Upgrade SAGEM-EI90HD (v52) to sagem.52.0.0.4_0_26 &gt;&gt; on 157.157.4.37</a><br>
+<a href="#" onClick="sagem.Set('STB', 'UPGRADE', '157.157.4.37', '69', 'sagem.53.0.0.4_0_26'); sagem.Set('STB','REBOOT');">&lt;&lt Upgrade SAGEM-EI90HD (v53) to sagem.53.0.0.4_0_26 &gt;&gt; on 157.157.4.37</a><br>
+<br>
+<a href="#" onClick="sagem.Set('STB', 'UPGRADE', '157.157.4.37', '69', 'sagem.52.0.0.4_0_11'); sagem.Set('STB','REBOOT');">&lt;&lt Upgrade SAGEM-EI90HD (v52) to sagem.52.0.0.4_0_11 &gt;&gt; on 157.157.4.37</a><br>
+<a href="#" onClick="sagem.Set('STB', 'UPGRADE', '157.157.4.37', '69', 'sagem.53.0.0.4_0_11'); sagem.Set('STB','REBOOT');">&lt;&lt Upgrade SAGEM-EI90HD (v53) to sagem.53.0.0.4_0_11 &gt;&gt; on 157.157.4.37</a><br>
+
+<BR>
+<b>new urls:</b><br>
+<a href="#" onClick="sagem.Set('STB', 'UPGRADE', '157.157.2.115', '69', 'sagem.52.0.0.4_0_26'); sagem.Set('STB','REBOOT');">&lt;&lt Upgrade SAGEM-EI90HD (v52) to sagem.52.0.0.4_0_26 &gt;&gt; on 157.157.2.115</a><br>
+<a href="#" onClick="sagem.Set('STB', 'UPGRADE', '157.157.2.115', '69', 'sagem.53.0.0.4_0_26'); sagem.Set('STB','REBOOT');">&lt;&lt Upgrade SAGEM-EI90HD (v53) to sagem.53.0.0.4_0_26 &gt;&gt; on 157.157.2.115</a><br>
+<br>
+<a href="#" onClick="sagem.Set('STB', 'UPGRADE', '157.157.2.115', '69', 'sagem.52.0.0.4_0_11'); sagem.Set('STB','REBOOT');">&lt;&lt Upgrade SAGEM-EI90HD (v52) to sagem.52.0.0.4_0_11 &gt;&gt; on 157.157.2.115</a><br>
+<a href="#" onClick="sagem.Set('STB', 'UPGRADE', '157.157.2.115', '69', 'sagem.53.0.0.4_0_11'); sagem.Set('STB','REBOOT');">&lt;&lt Upgrade SAGEM-EI90HD (v53) to sagem.53.0.0.4_0_11 &gt;&gt; on 157.157.2.115</a><br>
+
+
+</body>
+</html>
