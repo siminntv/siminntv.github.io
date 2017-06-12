@@ -1,0 +1,123 @@
+<html>
+<head>
+<meta http-equiv="Pragma" content="no-cache">
+<style type="text/css">
+@font-face {
+	src: url("Roboto/Roboto-Light.ttf");
+	font-family: "roboto";
+	font-style: normal;
+	font-weight:300;
+}
+@font-face {
+	src: url("Roboto/Roboto-Regular.ttf");
+	font-family: "roboto";
+	font-style: normal;
+	font-weight:400;
+}
+
+	body {
+	  background-color: black;
+	  margin:0;
+	  padding:100px;
+	  color:#ffffff;
+	  font-family:roboto,sans-serif;
+	  font-size:1.4em;
+	}
+
+*:focus {
+	background: rgba(0,0,0,0);
+	outline: rgba(0,0,0,0) thin solid;
+}
+
+
+	a {
+		color: white;
+		padding:10px 20px;
+		margin:2px;
+		background-color:#333;
+		display:inline-block;
+		text-decoration: none;
+		background:rgb(128,128,128);
+		background:linear-gradient(to bottom, rgb(60,60,60), rgb(80,80,80));
+		box-sizing:border-box;
+		border-radius:1px;
+		border:1px solid rgba(255,255,255,0.1);
+	}
+
+	h1 {
+		margin:0;
+		margin-bottom:5px;
+		font-size:2.2em;
+	}
+
+	a:focus {
+		color: #fff;
+		background-color:#00aef3;
+
+		transform-origin:center center;
+		transform:perspective(1000px) scaleZ(1) translateZ(120px);
+		transition:transform 0.25s;
+		transition-timing-function:cubic-bezier(0.23, 1, 0.32, 1);
+	}
+	a:active {
+		background:linear-gradient(to top, rgb(0,150,209), rgb(0,97,136)) !important;
+	}
+
+::-webkit-scrollbar {
+    height: 12px;
+    width: 24px;
+    background: #383838;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #999;
+    border:3px solid #383838;
+    -webkit-border-radius: 0px;
+    -webkit-box-shadow: none;
+}
+
+::-webkit-scrollbar-corner {
+    background: #383838;
+}
+
+</style>
+
+<script>
+if(typeof AirTiesVP != 'undefined') {
+	AirJS = new AirTiesVP();
+	AirJS.setVideoSize(true);
+	//AirJS.disableMacrovision()
+}
+
+var callPing = function() {
+	var pingRes = sagem.Set('NETWORK','PING','mbl.is');
+	var pingEl = document.getElementById("pingResults");
+	pingEl.innerHTML = pingRes;
+}
+
+var setdns2todns1 = function() {
+	var dns1 = sagem.Get("NETWORK","DNS1");
+	sagem.Set("NETWORK","DNS2",dns1);
+}
+
+</script>
+
+</head>
+
+<body>
+
+<h1>DNS Debugging</h1>
+
+<a href="#" onClick="sagem.Set('NETWORK','DNS1','157.157.2.117','SAVE');">SET DNS1 TO 157.157.2.117</a><br>
+<a href="#" onClick="sagem.Set('NETWORK','DNS2','157.157.2.117','SAVE');">SET DNS2 TO 157.157.2.117</a><br>
+<a href="#" onClick="sagem.Set('NETWORK','DNS1','192.168.1.254','SAVE');">SET DNS1 TO 192.168.1.254</a><br>
+<a href="#" onClick="sagem.Set('NETWORK','DNS2','192.168.1.254','SAVE');">SET DNS2 TO 192.168.1.254</a><br>
+
+<a href="#" onClick="callPing()">Test ping</a><br>
+<a href="#" onClick="setdns2todns1()">setdns2todns1</a><br>
+
+<div id="pingResults"></div>
+
+</body>
+
+</html>
